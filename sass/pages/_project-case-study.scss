@@ -2,10 +2,10 @@
   color: #fff;
   background: linear-gradient(
       to right,
-      rgba($themeClrPrimary, 0.8),
-      rgba($themeClrPrimary, 0.8)
+      var(--hero-overlay),
+      var(--hero-overlay)
     ),
-    url(../../assets/svg/common-bg.svg);
+    url(../assets/svg/common-bg.svg);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -48,6 +48,7 @@
     &-title {
       font-weight: 700;
       font-size: 2.8rem;
+      color: var(--clr-heading);
       margin-bottom: 3rem;
       @include respond(phone) {
         font-size: 2.4rem;
@@ -74,7 +75,7 @@
     &-para {
       font-size: 1.8rem;
       line-height: 1.7;
-      color: grey;
+      color: var(--clr-para);
       margin-bottom: 2rem;
     }
   }
@@ -90,10 +91,10 @@
       margin-bottom: 1.5rem;
       margin-right: 1.5rem;
       font-size: 1.6rem;
-      background: rgba(#999, 0.2);
+      background: var(--bg-chip);
       border-radius: $commonBorderRadius;
       font-weight: 600;
-      color: #777;
+      color: var(--clr-muted);
     }
   }
   &__links {

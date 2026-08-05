@@ -1,293 +1,395 @@
-.home-hero {
-  color: #fff;
-  background: linear-gradient(
-      to right,
-      rgba($themeClrPrimary, 0.8),
-      rgba($themeClrPrimary, 0.8)
-    ),
-    url(../../assets/svg/common-bg.svg);
-  background-position: center;
+.about {
+  background: var(--bg-alt);
+  transition: background 0.3s;
 
-  height: 100vh;
-
-  min-height: 80rem;
-  max-height: 120rem;
-  position: relative;
-
-  @include respond(phone) {
-    height: unset;
-    min-height: unset;
-  }
-
-  &__socials {
-    position: absolute;
-    top: 50%;
-    border: 2px solid #eee;
-    border-left: 2px solid #eee;
-    transform: translateY(-50%);
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-gap: 10rem;
+    align-items: start;
+    @include respond(tab-land) {
+      grid-gap: 7rem;
+    }
     @include respond(tab-port) {
-      display: none;
+      grid-template-columns: 1fr;
+      grid-gap: 6rem;
     }
   }
-  &__mouse-scroll-cont {
-    position: absolute;
-    bottom: 3%;
-    left: 50%;
-    transform: translateX(-50%);
+
+  &__identity {
+    position: sticky;
+    top: 12rem;
+
+    @include respond(tab-port) {
+      position: static;
+      text-align: center;
+    }
+  }
+
+  &__identity-img-cont {
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--clr-primary);
+    margin-bottom: 3rem;
+
+    @include respond(tab-port) {
+      margin: 0 auto 3rem auto;
+    }
+  }
+
+  &__identity-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  &__identity-name {
+    font-size: 4.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--clr-heading);
+    line-height: 1.2;
 
     @include respond(phone) {
-      display: none;
+      font-size: 3.4rem;
     }
   }
 
-  &__social {
-    width: 5rem;
+  &__identity-sub {
+    margin-top: 1.5rem;
+    font-size: 1.8rem;
+    color: var(--clr-muted);
+    line-height: 1.7;
+    max-width: 32rem;
+
+    @include respond(tab-port) {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
-  &__social-icon-link {
-    width: 100%;
-    display: block;
-    padding: 1.2rem;
-    border-bottom: 2px solid #eee;
-    transition: background .3s;
+  &__identity-socials {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+
+    @include respond(tab-port) {
+      justify-content: center;
+    }
+  }
+
+  &__identity-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.4rem;
+    height: 4.4rem;
+    border-radius: 50%;
+    background: var(--clr-primary);
+    transition: transform 0.3s, opacity 0.3s;
 
     &:hover {
-      background: rgba(#fff,.1);
-    }
-
-    &--bd-none {
-      border-bottom: 0;
+      transform: translateY(-3px);
+      opacity: 0.85;
     }
   }
 
-  &__social-icon {
-    width: 100%;
+  &__identity-social-icon {
+    width: 2rem;
+    height: 2rem;
+    display: block;
   }
 
-  &__content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 90rem;
-    width: 92%;
-
-    @include respond(phone) {
-      padding: 19rem 0 13rem 0;
-      margin: auto;
-      position: static;
-      transform: translate(0, 0);
-    }
+  &__identity-cta {
+    margin-top: 3.5rem;
+    display: inline-block;
   }
 
-  &__info {
-    margin: 3rem auto 0 auto;
-    max-width: 80rem;
-  }
-  &__cta {
-    margin-top: 5rem;
-    text-align: center;
-  }
-}
-
-.about {
-  background: rgb(250, 250, 250);
-  &__content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10rem;
-    @include respond(tab-port) {
-      grid-template-columns: 1fr;
-      grid-gap: 8rem;
-    }
-    &-title {
-      font-weight: 700;
-      font-size: 2.8rem;
-      margin-bottom: 3rem;
-      @include respond(phone) {
-        font-size: 2.4rem;
-      }
-    }
-    &-details-para {
-      font-size: 1.8rem;
-      color: grey;
-      max-width: 60rem;
-      line-height: 1.7;
-      margin-bottom: 1rem;
-      &--hl {
-        font-weight: 700;
-        margin: 0 3px;
-      }
-      &:last-child {
-        margin-bottom: 4rem;
-      }
-    }
-  }
-}
-
-.projects {
-  &__row {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    grid-gap: 5rem;
-    margin-bottom: 11rem;
-
-    @include respond(tab-port) {
-      grid-template-columns: 1fr;
-      grid-gap: 2rem;
-      margin-bottom: 8rem;
-    }
-
+  &__content-main {
     @include respond(tab-port) {
       text-align: center;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 1.5rem;
+  }
+
+  &__content-details {
+    margin-bottom: 5rem;
+  }
+
+  &__content-details-para {
+    font-size: 1.8rem;
+    color: var(--clr-para);
+    max-width: 60rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+
+    strong {
+      color: var(--clr-heading);
+    }
+
+    @include respond(tab-port) {
+      margin-left: auto;
+      margin-right: auto;
     }
 
     &:last-child {
       margin-bottom: 0;
     }
+  }
 
-    &-img-cont {
-      overflow: hidden;
+  &__skills-title {
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: var(--clr-heading);
+    margin-bottom: 3rem;
+    @include respond(phone) {
+      font-size: 2.4rem;
     }
-    &-img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-    }
-    &-content {
-      padding: 2rem 0;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: flex-start;
+  }
+}
 
-      @include respond(tab-port) {
-        align-items: center;
-      }
+.experience {
+  background: var(--bg-body);
+  transition: background 0.3s;
 
-      &-title {
-        font-weight: 700;
-        font-size: 2.8rem;
-        margin-bottom: 2rem;
-        @include respond(phone) {
-          font-size: 2.4rem;
-        }
-      }
-      &-desc {
-        font-size: 1.8rem;
-        color: grey;
-        max-width: 60rem;
-        line-height: 1.7;
-        margin-bottom: 3rem;
-        @include respond(phone) {
-          font-size: 1.7rem;
-        }
+  &__timeline {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding-left: 4rem;
+    border-left: 2px solid var(--clr-border);
+
+    @include respond(phone) {
+      padding-left: 3rem;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-bottom: 6rem;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -4.8rem;
+      top: 0.8rem;
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 50%;
+      background: var(--clr-primary);
+      box-shadow: 0 0 0 4px var(--bg-body);
+
+      @include respond(phone) {
+        left: -3.8rem;
       }
     }
+  }
+
+  &__period {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--clr-accent);
+  }
+
+  &__role {
+    margin-top: 1rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--clr-heading);
+
+    @include respond(phone) {
+      font-size: 2.1rem;
+    }
+  }
+
+  &__org {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--clr-muted);
+  }
+
+  &__desc {
+    margin-top: 1.5rem;
+    font-size: 1.7rem;
+    line-height: 1.7;
+    color: var(--clr-para);
+  }
+
+  &__stack {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  &__tag {
+    padding: 0.6rem 1.6rem;
+    margin: 0 1rem 1rem 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--clr-muted);
+    background: var(--bg-chip);
+    border-radius: $commonBorderRadius;
+  }
+}
+
+.projects {
+  background: var(--bg-alt);
+  transition: background 0.3s;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    grid-gap: 4rem;
+
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+      grid-gap: 3rem;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--bg-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: $commonBorderRadius;
+    box-shadow: 0 5px 20px 0 var(--clr-shadow);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px 0 var(--clr-shadow-strong);
+      border-color: var(--clr-accent);
+    }
+  }
+
+  &__card-img-cont {
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+  }
+
+  &__card-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  &__card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+    padding: 3rem;
+  }
+
+  &__card-title {
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: var(--clr-heading);
+    margin-bottom: 1.5rem;
+  }
+
+  &__card-desc {
+    font-size: 1.6rem;
+    color: var(--clr-para);
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+
+  &__card-btn {
+    margin-top: auto;
+    padding: 1.2rem 3.5rem;
+    font-size: 1.4rem;
   }
 }
 
 .contact {
   background: linear-gradient(
       to right,
-      rgba($themeClrPrimary, 0.8),
-      rgba($themeClrPrimary, 0.8)
+      var(--hero-overlay),
+      var(--hero-overlay)
     ),
-    url(../../assets/svg/common-bg.svg);
+    url(../assets/svg/common-bg.svg);
   background-size: cover;
   background-position: center;
 
-  &__form-container {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background: rgba(#fff, 2);
-    padding: 4rem;
-    margin-top: 6rem;
-    max-width: 80rem;
-    text-align: right;
-    width: 95%;
-    border-radius: $commonBorderRadius;
+  &__methods {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem;
+    max-width: 100rem;
+    margin: 0 auto;
 
-    margin: 5rem auto 0 auto;
-    @include respond(phone) {
-      padding: 3rem;
+    @include respond(tab-port) {
+      grid-template-columns: 1fr;
+      grid-gap: 2.5rem;
+      max-width: 50rem;
     }
   }
-  &__form-field {
-    margin-bottom: 4rem;
-    @include respond(phone) {
-      margin-bottom: 3rem;
+
+  &__method {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2.5rem;
+    border: 2px solid rgba(#fff, 0.25);
+    border-radius: $commonBorderRadius;
+    background: rgba(#fff, 0.08);
+    color: #fff;
+    transition: transform 0.3s, background 0.3s, border-color 0.3s;
+
+    &:hover {
+      transform: translateY(-5px);
+      background: rgba(#fff, 0.16);
+      border-color: rgba(#fff, 0.5);
     }
   }
-  &__form-label {
-    color: #666;
+
+  &__method-icon {
+    width: 3.6rem;
+    height: 3.6rem;
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  &__method-label {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  &__method-value {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: #e8eef5;
+    word-break: break-word;
+  }
+
+  &__note {
+    margin-top: 4rem;
+    text-align: center;
     font-size: 1.4rem;
     letter-spacing: 1px;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    display: block;
-    text-align: left;
-  }
-  &__form-input {
-    color: #333;
-    padding: 2rem;
-    width: 100%;
-    border: 1px solid rgb(235, 235, 235);
-    font-size: 1.6rem;
-    letter-spacing: 0px;
-    background: rgba(rgb(240, 240, 240), 1);
-    border-radius: $commonBorderRadius;
-    font-weight: 600;
-    /* Code for Modern Browsers */
-    &::placeholder {
-      color: #999;
-      font-weight: 600;
-      font-size: 1.6rem;
-    }
-
-    /* Code for WebKit, Blink, Edge */
-    &::-webkit-input-placeholder {
-      color: #999;
-      font-weight: 600;
-      font-size: 1.6rem;
-    }
-
-    /* Code for Internet Explorer 10-11 */
-    &:-ms-input-placeholder {
-      color: #999;
-      font-weight: 600;
-      font-size: 1.6rem;
-    }
-
-    /* Code for Microsoft Edge */
-    &::-ms-input-placeholder {
-      color: #999;
-      font-weight: 600;
-      font-size: 1.6rem;
-    }
-
-    /* Code for Mozilla Firefox 4 to 18 */
-    &:-moz-placeholder {
-      opacity: 1;
-      color: #999;
-      font-weight: 600;
-      font-size: 1.6rem;
-    }
-
-    /* Code for Mozilla Firefox 19+ */
-    &::-moz-placeholder {
-      opacity: 1;
-      color: #999;
-      font-weight: 600;
-      font-size: 1.6rem;
-    }
-  }
-  &__btn {
-    width: 30%;
-
-    padding: 2rem 4rem;
-    font-size: 1.6rem;
-    @include respond(phone) {
-      width: 100%;
-    }
+    color: #dbe6f2;
   }
 }

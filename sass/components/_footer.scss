@@ -1,9 +1,11 @@
 .main-footer {
-  background: #000;
+  background: var(--footer-bg);
   color: #fff;
+
   &__upper {
     display: flex;
     justify-content: space-between;
+    gap: 6rem;
     padding: 8rem 0;
     @include respond(tab-port) {
       padding: 6rem 0;
@@ -14,51 +16,63 @@
   }
 
   &__row-1 {
-    order: 2;
+    width: 45%;
+    max-width: 50rem;
     @include respond(tab-port) {
+      width: 60%;
+    }
+    @include respond(phone) {
+      width: 100%;
       margin-bottom: 5rem;
     }
   }
+
   &__row-2 {
-    width: 40%;
-    order: 1;
-    max-width: 50rem;
-    @include respond(tab-port) {
-      width: 100%;
-    }
+    min-width: 18rem;
+  }
+
+  &__brand {
+    letter-spacing: 2px;
   }
 
   &__short-desc {
     margin-top: 2rem;
-    color: #eee;
+    color: var(--footer-text);
     font-size: 1.5rem;
     line-height: 1.7;
   }
 
-  &__social-cont {
+  &__nav {
     margin-top: 2rem;
   }
 
-  &__icon {
-    margin-right: 1rem;
-    width: 2.5rem;
-    &--mr-none {
-      margin-right: 0;
+  &__nav-item {
+    margin-bottom: 1.2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__nav-link {
+    color: var(--footer-text);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--clr-accent);
     }
   }
 
   &__lower {
     padding: 4rem 0;
-    border-top: 1px solid #444;
-    color: #eee;
+    border-top: 1px solid var(--footer-border);
+    color: var(--footer-text);
     font-size: 1.2rem;
-    text-align: left;
     text-align: center;
-    a {
-      text-decoration: underline;
-      font-weight: bold;
-      margin-left: 2px;
-    }
+    letter-spacing: 1px;
     @include respond(tab-port) {
       padding: 3.5rem 0;
     }

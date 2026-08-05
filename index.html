@@ -4,8 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Edward Dela Paz | Frontend Developer</title>
-    <meta name="description" content="Portfolio of Edward Joseph Adorable Dela Paz - Frontend Developer & Computer Science Graduate" />
+    <title>Torps101 | Frontend Developer</title>
+    <meta name="description" content="Portfolio of Torps101 - Frontend Developer & Computer Science Graduate" />
+
+    <script>
+      (function () {
+        var stored = localStorage.getItem('theme')
+        if (!stored) {
+          stored = window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+        }
+        document.documentElement.setAttribute('data-theme', stored)
+      })()
+    </script>
 
     <link rel="stylesheet" href="css/style.css" />
 
@@ -23,19 +35,19 @@
           <div class="header__logo-img-cont">
             <img
               src="./assets/png/profilepic.png"
-              alt="Edward Dela Paz Profile Picture"
+              alt="Torps101 Profile Picture"
               class="header__logo-img"
             />
           </div>
-          <span class="header__logo-sub">Edward Dela Paz</span>
+          <span class="header__logo-sub">Torps101</span>
         </div>
         <div class="header__main">
           <ul class="header__links">
             <li class="header__link-wrapper">
-              <a href="./index.html" class="header__link"> Home </a>
+              <a href="./index.html#about" class="header__link"> About </a>
             </li>
             <li class="header__link-wrapper">
-              <a href="./index.html#about" class="header__link"> About </a>
+              <a href="./index.html#experience" class="header__link"> Experience </a>
             </li>
             <li class="header__link-wrapper">
               <a href="./index.html#projects" class="header__link"> Projects </a>
@@ -44,6 +56,40 @@
               <a href="./index.html#contact" class="header__link"> Contact </a>
             </li>
           </ul>
+          <button
+            type="button"
+            class="theme-toggle"
+            aria-label="Toggle dark mode"
+            aria-pressed="false"
+          >
+            <svg
+              class="theme-toggle__icon theme-toggle__icon--moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+            <svg
+              class="theme-toggle__icon theme-toggle__icon--sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+              />
+            </svg>
+          </button>
           <div class="header__main-ham-menu-cont">
             <img
               src="./assets/svg/ham-menu.svg"
@@ -62,10 +108,10 @@
         <div class="header__sm-menu-content">
           <ul class="header__sm-menu-links">
             <li class="header__sm-menu-link">
-              <a href="./index.html"> Home </a>
+              <a href="./index.html#about"> About </a>
             </li>
             <li class="header__sm-menu-link">
-              <a href="./index.html#about"> About </a>
+              <a href="./index.html#experience"> Experience </a>
             </li>
             <li class="header__sm-menu-link">
               <a href="./index.html#projects"> Projects </a>
@@ -78,76 +124,65 @@
       </div>
     </header>
 
-    <section class="home-hero">
-      <div class="home-hero__content">
-        <h1 class="heading-primary">Hey, My name is <br /> Edward Joseph Adorable Dela Paz</h1>
-        <div class="home-hero__info">
-          <p class="text-primary">
-            A Computer Science fresh graduate specializing in Frontend development and 
-            crafting design-focused passion projects to build impactful web experiences.
-          </p>
-        </div>
-        <div class="home-hero__cta">
-          <a href="./#projects" class="btn btn--bg">Projects</a>
-        </div>
-      </div>
-      <div class="home-hero__socials">
-        <!-- Replace '#' with your actual profile links -->
-        <div class="home-hero__social">
-          <a href="https://linkedin.com/in/YOUR-PROFILE" target="_blank" rel="noreferrer" class="home-hero__social-icon-link">
-            <img src="./assets/png/linkedin-ico.png" alt="LinkedIn" class="home-hero__social-icon" />
-          </a>
-        </div>
-        <div class="home-hero__social">
-          <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noreferrer" class="home-hero__social-icon-link">
-            <img src="./assets/png/github-ico.png" alt="GitHub" class="home-hero__social-icon" />
-          </a>
-        </div>
-        <div class="home-hero__social">
-          <a href="https://twitter.com/YOUR-HANDLE" target="_blank" rel="noreferrer" class="home-hero__social-icon-link">
-            <img src="./assets/png/twitter-ico.png" alt="Twitter" class="home-hero__social-icon" />
-          </a>
-        </div>
-        <div class="home-hero__social">
-          <a href="https://youtube.com/YOUR-CHANNEL" target="_blank" rel="noreferrer" class="home-hero__social-icon-link">
-            <img src="./assets/png/yt-ico.png" alt="YouTube" class="home-hero__social-icon" />
-          </a>
-        </div>
-        <div class="home-hero__social">
-          <a href="https://instagram.com/YOUR-HANDLE" target="_blank" rel="noreferrer" class="home-hero__social-icon-link home-hero__social-icon-link--bd-none">
-            <img src="./assets/png/insta-ico.png" alt="Instagram" class="home-hero__social-icon" />
-          </a>
-        </div>
-      </div>
-      <div class="home-hero__mouse-scroll-cont">
-        <div class="mouse"></div>
-      </div>
-    </section>
-
-    <section id="about" class="about sec-pad">
+    <section id="about" class="about sec-pad sec-pad--first">
       <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-med">
-          <span class="heading-sec__main">About Me</span>
-          <span class="heading-sec__sub">
-            Learn more about my background, technical expertise, and passion for web design.
-          </span>
-        </h2>
         <div class="about__content">
+          <div class="about__identity">
+            <div class="about__identity-img-cont">
+              <img
+                src="./assets/png/profilepic.png"
+                alt="Torps101 Profile Picture"
+                class="about__identity-img"
+              />
+            </div>
+            <h1 class="about__identity-name">Torps101</h1>
+            <p class="about__identity-sub">
+              Frontend developer and Computer Science graduate.
+            </p>
+            <div class="about__identity-socials">
+              <a
+                href="https://www.linkedin.com/in/torps101"
+                target="_blank"
+                rel="noreferrer"
+                class="about__identity-social"
+                aria-label="LinkedIn"
+              >
+                <img src="./assets/svg/linkedin-ico.svg" alt="" class="about__identity-social-icon" />
+              </a>
+              <a
+                href="https://discord.com/users/000000000000000000"
+                target="_blank"
+                rel="noreferrer"
+                class="about__identity-social"
+                aria-label="Discord"
+              >
+                <img src="./assets/svg/discord-ico.svg" alt="" class="about__identity-social-icon" />
+              </a>
+              <a
+                href="mailto:torps101@gmail.com"
+                class="about__identity-social"
+                aria-label="Email"
+              >
+                <img src="./assets/svg/gmail-ico.svg" alt="" class="about__identity-social-icon" />
+              </a>
+            </div>
+            <a href="./#contact" class="btn btn--med btn--theme about__identity-cta">Contact</a>
+          </div>
+
           <div class="about__content-main">
-            <h3 class="about__content-title">Get to know me!</h3>
+            <h2 class="heading heading-sec about__heading">
+              <span class="heading-sec__main heading-sec__main--left">About Me</span>
+            </h2>
             <div class="about__content-details">
               <p class="about__content-details-para">
-                Hey! I'm <strong>Edward Dela Paz</strong>, a <strong>Computer Science Graduate</strong> and <strong>Frontend Web Developer</strong>. 
+                Hey! I'm <strong>Torps101</strong>, a <strong>Computer Science Graduate</strong> and <strong>Frontend Web Developer</strong>.
                 I focus on building clean, interactive user interfaces and refining responsive digital experiences through modern frontend frameworks and intuitive designs.
               </p>
               <p class="about__content-details-para">
                 I regularly challenge myself with side projects to stay sharp on design trends and modern web technologies. I'm open to full-time engineering roles, freelance work, and startup collaborations. Feel free to reach out to connect!
               </p>
             </div>
-            <a href="./#contact" class="btn btn--med btn--theme dynamicBgClr">Contact</a>
-          </div>
-          <div class="about__content-skills">
-            <h3 class="about__content-title">My Skills</h3>
+            <h3 class="about__skills-title">My Skills</h3>
             <div class="skills">
               <div class="skills__skill">HTML5</div>
               <div class="skills__skill">CSS3</div>
@@ -165,6 +200,63 @@
       </div>
     </section>
 
+    <section id="experience" class="experience sec-pad">
+      <div class="main-container">
+        <h2 class="heading heading-sec heading-sec__mb-bg">
+          <span class="heading-sec__main">Experience</span>
+          <span class="heading-sec__sub">
+            Where I have worked and what I built along the way.
+          </span>
+        </h2>
+
+        <div class="experience__timeline">
+          <article class="experience__item">
+            <span class="experience__period">2025 &mdash; Present</span>
+            <h3 class="experience__role">Frontend Developer</h3>
+            <span class="experience__org">Company Name</span>
+            <p class="experience__desc">
+              Building and maintaining responsive product interfaces, turning design files into reusable components, and improving page performance across the main web app.
+            </p>
+            <div class="experience__stack">
+              <span class="experience__tag">React</span>
+              <span class="experience__tag">TypeScript</span>
+              <span class="experience__tag">SASS</span>
+              <span class="experience__tag">REST APIs</span>
+            </div>
+          </article>
+
+          <article class="experience__item">
+            <span class="experience__period">2024 &mdash; 2025</span>
+            <h3 class="experience__role">Freelance Web Developer</h3>
+            <span class="experience__org">Self-employed</span>
+            <p class="experience__desc">
+              Designed and shipped small business sites and landing pages end to end, handling layout, responsiveness, accessibility and client handover.
+            </p>
+            <div class="experience__stack">
+              <span class="experience__tag">HTML5</span>
+              <span class="experience__tag">CSS3</span>
+              <span class="experience__tag">JavaScript</span>
+              <span class="experience__tag">Git</span>
+            </div>
+          </article>
+
+          <article class="experience__item">
+            <span class="experience__period">2024</span>
+            <h3 class="experience__role">Web Development Intern</h3>
+            <span class="experience__org">Company Name</span>
+            <p class="experience__desc">
+              Supported the frontend team with UI fixes, component documentation and cross-browser testing, and shipped a handful of small features to production.
+            </p>
+            <div class="experience__stack">
+              <span class="experience__tag">JavaScript</span>
+              <span class="experience__tag">Responsive Design</span>
+              <span class="experience__tag">UI/UX Prototyping</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="projects" class="projects sec-pad">
       <div class="main-container">
         <h2 class="heading heading-sec heading-sec__mb-bg">
@@ -174,93 +266,100 @@
           </span>
         </h2>
 
-        <div class="projects__content">
-          <!-- Project 1 -->
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
+        <div class="projects__grid">
+          <article class="projects__card">
+            <div class="projects__card-img-cont">
               <img
                 src="./assets/jpeg/project-mockup-example.jpeg"
-                alt="Project 1 Screenshot"
-                class="projects__row-img"
+                alt="Frontend Web Application Screenshot"
+                class="projects__card-img"
                 loading="lazy"
               />
             </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Frontend Web Application</h3>
-              <p class="projects__row-content-desc">
+            <div class="projects__card-body">
+              <h3 class="projects__card-title">Frontend Web Application</h3>
+              <p class="projects__card-desc">
                 A responsive web app focused on dynamic UI components, state management, and optimized asset loading.
               </p>
-              <a href="./project-1.html" class="btn btn--med btn--theme dynamicBgClr" target="_blank">Case Study</a>
+              <a href="./project-1.html" class="btn btn--theme projects__card-btn" target="_blank">Case Study</a>
             </div>
-          </div>
+          </article>
 
-          <!-- Project 2 -->
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
+          <article class="projects__card">
+            <div class="projects__card-img-cont">
               <img
                 src="./assets/jpeg/project-mockup-example.jpeg"
-                alt="Project 2 Screenshot"
-                class="projects__row-img"
+                alt="Portfolio and Design Project Screenshot"
+                class="projects__card-img"
                 loading="lazy"
               />
             </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Portfolio & Design Project</h3>
-              <p class="projects__row-content-desc">
+            <div class="projects__card-body">
+              <h3 class="projects__card-title">Portfolio & Design Project</h3>
+              <p class="projects__card-desc">
                 A custom-themed portfolio prototype showcasing fluid layout grids, CSS animations, and modern aesthetic standards.
               </p>
-              <a href="./project-2.html" class="btn btn--med btn--theme dynamicBgClr" target="_blank">Case Study</a>
+              <a href="./project-2.html" class="btn btn--theme projects__card-btn" target="_blank">Case Study</a>
             </div>
-          </div>
+          </article>
 
-          <!-- Project 3 -->
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
+          <article class="projects__card">
+            <div class="projects__card-img-cont">
               <img
                 src="./assets/jpeg/project-mockup-example.jpeg"
-                alt="Project 3 Screenshot"
-                class="projects__row-img"
+                alt="Interactive Dashboard Screenshot"
+                class="projects__card-img"
                 loading="lazy"
               />
             </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Interactive Dashboard</h3>
-              <p class="projects__row-content-desc">
+            <div class="projects__card-body">
+              <h3 class="projects__card-title">Interactive Dashboard</h3>
+              <p class="projects__card-desc">
                 An interactive web interface built to visualize data metrics using modern JavaScript libraries and API integrations.
               </p>
-              <a href="./project-3.html" class="btn btn--med btn--theme dynamicBgClr" target="_blank">Case Study</a>
+              <a href="./project-3.html" class="btn btn--theme projects__card-btn" target="_blank">Case Study</a>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="contact sec-pad dynamicBg">
+    <section id="contact" class="contact sec-pad">
       <div class="main-container">
         <h2 class="heading heading-sec heading-sec__mb-med">
           <span class="heading-sec__main heading-sec__main--lt">Contact</span>
           <span class="heading-sec__sub heading-sec__sub--lt">
-            Feel free to contact me by submitting the form below and I will get back to you as soon as possible.
+            The quickest ways to reach me.
           </span>
         </h2>
-        <div class="contact__form-container">
-          <!-- Form submission endpoint (e.g., Formspree or custom backend) -->
-          <form action="#" method="POST" class="contact__form">
-            <div class="contact__form-field">
-              <label class="contact__form-label" for="name">Name</label>
-              <input required placeholder="Enter Your Name" type="text" class="contact__form-input" name="name" id="name" />
-            </div>
-            <div class="contact__form-field">
-              <label class="contact__form-label" for="email">Email</label>
-              <input required placeholder="Enter Your Email" type="email" class="contact__form-input" name="email" id="email" />
-            </div>
-            <div class="contact__form-field">
-              <label class="contact__form-label" for="message">Message</label>
-              <textarea required cols="30" rows="10" class="contact__form-input" placeholder="Enter Your Message" name="message" id="message"></textarea>
-            </div>
-            <button type="submit" class="btn btn--theme contact__btn">Submit</button>
-          </form>
+        <div class="contact__methods">
+          <a
+            href="https://www.linkedin.com/in/torps101"
+            target="_blank"
+            rel="noreferrer"
+            class="contact__method"
+          >
+            <img src="./assets/svg/linkedin-ico.svg" alt="" class="contact__method-icon" />
+            <span class="contact__method-label">LinkedIn</span>
+            <span class="contact__method-value">linkedin.com/in/torps101</span>
+          </a>
+          <a
+            href="https://discord.com/users/000000000000000000"
+            target="_blank"
+            rel="noreferrer"
+            class="contact__method"
+          >
+            <img src="./assets/svg/discord-ico.svg" alt="" class="contact__method-icon" />
+            <span class="contact__method-label">Discord</span>
+            <span class="contact__method-value">torps101</span>
+          </a>
+          <a href="mailto:torps101@gmail.com" class="contact__method">
+            <img src="./assets/svg/gmail-ico.svg" alt="" class="contact__method-icon" />
+            <span class="contact__method-label">Gmail</span>
+            <span class="contact__method-value">torps101@gmail.com</span>
+          </a>
         </div>
+        <p class="contact__note">Sample placeholders &mdash; real handles coming soon.</p>
       </div>
     </section>
 
@@ -268,37 +367,32 @@
       <div class="main-container">
         <div class="main-footer__upper">
           <div class="main-footer__row main-footer__row-1">
-            <h2 class="heading heading-sm main-footer__heading-sm">
-              <span>Social</span>
-            </h2>
-            <div class="main-footer__social-cont">
-              <a target="_blank" rel="noreferrer" href="https://linkedin.com/in/YOUR-PROFILE">
-                <img class="main-footer__icon" src="./assets/png/linkedin-ico.png" alt="LinkedIn" />
-              </a>
-              <a target="_blank" rel="noreferrer" href="https://github.com/YOUR-USERNAME">
-                <img class="main-footer__icon" src="./assets/png/github-ico.png" alt="GitHub" />
-              </a>
-              <a target="_blank" rel="noreferrer" href="https://twitter.com/YOUR-HANDLE">
-                <img class="main-footer__icon" src="./assets/png/twitter-ico.png" alt="Twitter" />
-              </a>
-              <a target="_blank" rel="noreferrer" href="https://youtube.com/YOUR-CHANNEL">
-                <img class="main-footer__icon" src="./assets/png/yt-ico.png" alt="YouTube" />
-              </a>
-              <a target="_blank" rel="noreferrer" href="https://instagram.com/YOUR-HANDLE">
-                <img class="main-footer__icon main-footer__icon--mr-none" src="./assets/png/insta-ico.png" alt="Instagram" />
-              </a>
-            </div>
-          </div>
-          <div class="main-footer__row main-footer__row-2">
-            <h4 class="heading heading-sm text-lt">Edward Dela Paz</h4>
+            <h4 class="heading heading-sm main-footer__brand">Torps101</h4>
             <p class="main-footer__short-desc">
               A Frontend Web Developer & CS Graduate building functional web applications and user interfaces.
             </p>
           </div>
+          <div class="main-footer__row main-footer__row-2">
+            <h4 class="heading heading-sm main-footer__brand">Navigation</h4>
+            <ul class="main-footer__nav">
+              <li class="main-footer__nav-item">
+                <a href="./index.html#about" class="main-footer__nav-link">About</a>
+              </li>
+              <li class="main-footer__nav-item">
+                <a href="./index.html#experience" class="main-footer__nav-link">Experience</a>
+              </li>
+              <li class="main-footer__nav-item">
+                <a href="./index.html#projects" class="main-footer__nav-link">Projects</a>
+              </li>
+              <li class="main-footer__nav-item">
+                <a href="./index.html#contact" class="main-footer__nav-link">Contact</a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div class="main-footer__lower">
-          &copy; Copyright 2026. Made by <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com">Ram Maheshwari</a>
+          &copy; 2026 Torps101. All rights reserved.
         </div>
       </div>
     </footer>

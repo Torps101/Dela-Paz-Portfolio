@@ -1,4 +1,3 @@
-// ---
 const hamMenuBtn = document.querySelector('.header__main-ham-menu-cont')
 const smallMenu = document.querySelector('.header__sm-menu')
 const headerHamMenuBtn = document.querySelector('.header__main-ham-menu')
@@ -30,9 +29,39 @@ for (let i = 0; i < headerSmallMenuLinks.length; i++) {
   })
 }
 
-// ---
 const headerLogoConatiner = document.querySelector('.header__logo-container')
 
 headerLogoConatiner.addEventListener('click', () => {
   location.href = 'index.html'
+})
+
+const themeToggles = document.querySelectorAll('.theme-toggle')
+const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)')
+
+const applyTheme = (theme) => {
+  document.documentElement.setAttribute('data-theme', theme)
+  themeToggles.forEach((toggle) => {
+    toggle.setAttribute('aria-pressed', String(theme === 'dark'))
+  })
+}
+
+applyTheme(
+  localStorage.getItem('theme') || (colorSchemeQuery.matches ? 'dark' : 'light')
+)
+
+themeToggles.forEach((toggle) => {
+  toggle.addEventListener('click', () => {
+    const next =
+      document.documentElement.getAttribute('data-theme') === 'dark'
+        ? 'light'
+        : 'dark'
+    localStorage.setItem('theme', next)
+    applyTheme(next)
+  })
+})
+
+colorSchemeQuery.addEventListener('change', (event) => {
+  if (!localStorage.getItem('theme')) {
+    applyTheme(event.matches ? 'dark' : 'light')
+  }
 })

@@ -30,6 +30,7 @@
     letter-spacing: 1px;
     letter-spacing: 3px;
     text-align: center;
+    color: var(--clr-heading);
     margin-bottom: 3.5rem;
     position: relative;
     &--lt {
@@ -39,13 +40,27 @@
         background: #fff !important;
       }
     }
+    &--left {
+      text-align: left;
+      &::after {
+        left: 0;
+        transform: translateX(0);
+      }
+      @include respond(tab-port) {
+        text-align: center;
+        &::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
     &::after {
       content: '';
       position: absolute;
       top: calc(100% + 1.5rem);
       height: 5px;
       width: 3rem;
-      background: $themeClrPrimary;
+      background: var(--clr-primary);
       left: 50%;
       transform: translateX(-50%);
       border-radius: $commonBorderRadius;
@@ -59,7 +74,7 @@
   &__sub {
     display: block;
     text-align: center;
-    color: #777;
+    color: var(--clr-muted);
     font-size: 2rem;
     font-weight: 500;
     max-width: 80rem;
@@ -89,15 +104,15 @@
 }
 
 .btn {
-  background: #fff;
-  color: #333;
+  background: var(--btn-bg);
+  color: var(--btn-clr);
   text-transform: uppercase;
   letter-spacing: 2px;
   display: inline-block;
   font-weight: 700;
   border-radius: $commonBorderRadius;
-  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
-  transition: transform .3s;
+  box-shadow: 0 5px 15px 0 var(--clr-shadow-strong);
+  transition: transform .3s, background .3s, color .3s;
 
   &:hover {
     transform: translateY(-3px);
@@ -113,13 +128,13 @@
   }
 
   &--theme {
-    background: $themeClrPrimary;
-    color: #fff;
+    background: var(--clr-primary);
+    color: var(--clr-on-primary);
   }
   &--theme-inv {
-    color: $themeClrPrimary;
-    background: #fff;
-    border: 2px solid $themeClrPrimary;
+    color: var(--clr-accent);
+    background: var(--bg-surface);
+    border: 2px solid var(--clr-accent);
     box-shadow: none;
     padding: calc(1.5rem - 2px) calc(5rem - 2px);
   }
@@ -129,6 +144,13 @@
   padding: 12rem 0;
   @include respond(tab-port) {
     padding: 8rem 0;
+  }
+
+  &--first {
+    padding-top: 18rem;
+    @include respond(tab-port) {
+      padding-top: 14rem;
+    }
   }
 }
 

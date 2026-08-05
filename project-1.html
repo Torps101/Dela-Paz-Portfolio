@@ -7,6 +7,18 @@
     <title>Case Study of Project 1</title>
     <meta name="description" content="Case study page of Project" />
 
+    <script>
+      (function () {
+        var stored = localStorage.getItem('theme')
+        if (!stored) {
+          stored = window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+        }
+        document.documentElement.setAttribute('data-theme', stored)
+      })()
+    </script>
+
     <link rel="stylesheet" href="css/style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,30 +34,62 @@
         <div class="header__logo-container">
           <div class="header__logo-img-cont">
             <img
-              src="./assets/png/john-doe.png"
-              alt="Ram Maheshwari Logo Image"
+              src="./assets/png/profilepic.png"
+              alt="Torps101 Profile Picture"
               class="header__logo-img"
             />
           </div>
-          <span class="header__logo-sub">John Doe</span>
+          <span class="header__logo-sub">Torps101</span>
         </div>
         <div class="header__main">
           <ul class="header__links">
             <li class="header__link-wrapper">
-              <a href="./index.html" class="header__link"> Home </a>
+              <a href="./index.html#about" class="header__link"> About </a>
             </li>
             <li class="header__link-wrapper">
-              <a href="./index.html#about" class="header__link">About </a>
+              <a href="./index.html#experience" class="header__link"> Experience </a>
             </li>
             <li class="header__link-wrapper">
-              <a href="./index.html#projects" class="header__link">
-                Projects
-              </a>
+              <a href="./index.html#projects" class="header__link"> Projects </a>
             </li>
             <li class="header__link-wrapper">
               <a href="./index.html#contact" class="header__link"> Contact </a>
             </li>
           </ul>
+          <button
+            type="button"
+            class="theme-toggle"
+            aria-label="Toggle dark mode"
+            aria-pressed="false"
+          >
+            <svg
+              class="theme-toggle__icon theme-toggle__icon--moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+            <svg
+              class="theme-toggle__icon theme-toggle__icon--sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+              />
+            </svg>
+          </button>
           <div class="header__main-ham-menu-cont">
             <img
               src="./assets/svg/ham-menu.svg"
@@ -64,17 +108,14 @@
         <div class="header__sm-menu-content">
           <ul class="header__sm-menu-links">
             <li class="header__sm-menu-link">
-              <a href="./index.html"> Home </a>
-            </li>
-
-            <li class="header__sm-menu-link">
               <a href="./index.html#about"> About </a>
             </li>
-
+            <li class="header__sm-menu-link">
+              <a href="./index.html#experience"> Experience </a>
+            </li>
             <li class="header__sm-menu-link">
               <a href="./index.html#projects"> Projects </a>
             </li>
-
             <li class="header__sm-menu-link">
               <a href="./index.html#contact"> Contact </a>
             </li>
@@ -167,61 +208,33 @@
       <div class="main-container">
         <div class="main-footer__upper">
           <div class="main-footer__row main-footer__row-1">
-            <h2 class="heading heading-sm main-footer__heading-sm">
-              <span>Social</span>
-            </h2>
-            <div class="main-footer__social-cont">
-              <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/linkedin-ico.png"
-                  alt="icon"
-                />
-              </a>
-              <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/github-ico.png"
-                  alt="icon"
-                />
-              </a>
-              <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/twitter-ico.png"
-                  alt="icon"
-                />
-              </a>
-              <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/yt-ico.png"
-                  alt="icon"
-                />
-              </a>
-              <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon main-footer__icon--mr-none"
-                  src="./assets/png/insta-ico.png"
-                  alt="icon"
-                />
-              </a>
-            </div>
+            <h4 class="heading heading-sm main-footer__brand">Torps101</h4>
+            <p class="main-footer__short-desc">
+              A Frontend Web Developer & CS Graduate building functional web
+              applications and user interfaces.
+            </p>
           </div>
           <div class="main-footer__row main-footer__row-2">
-            <h4 class="heading heading-sm text-lt">John Doe</h4>
-            <p class="main-footer__short-desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit facilis
-              tempora explicabo quae quod deserunt
-            </p>
+            <h4 class="heading heading-sm main-footer__brand">Navigation</h4>
+            <ul class="main-footer__nav">
+              <li class="main-footer__nav-item">
+                <a href="./index.html#about" class="main-footer__nav-link">About</a>
+              </li>
+              <li class="main-footer__nav-item">
+                <a href="./index.html#experience" class="main-footer__nav-link">Experience</a>
+              </li>
+              <li class="main-footer__nav-item">
+                <a href="./index.html#projects" class="main-footer__nav-link">Projects</a>
+              </li>
+              <li class="main-footer__nav-item">
+                <a href="./index.html#contact" class="main-footer__nav-link">Contact</a>
+              </li>
+            </ul>
           </div>
         </div>
 
         <div class="main-footer__lower">
-          &copy; Copyright 2021. Made by
-          <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com"
-            >Ram Maheshwari</a
-          >
+          &copy; 2026 Torps101. All rights reserved.
         </div>
       </div>
     </footer>
