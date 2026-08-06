@@ -57,7 +57,6 @@ themeToggles.forEach((toggle) => {
         : 'dark'
     localStorage.setItem('theme', next)
     applyTheme(next)
-    
   })
 })
 
