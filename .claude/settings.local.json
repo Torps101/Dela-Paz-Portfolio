@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx --no-install sass --version)"
+      "Bash(npx --no-install sass --version)",
+      "Bash(node --check index.js)"
     ]
   }
 }

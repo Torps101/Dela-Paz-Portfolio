@@ -573,18 +573,43 @@ textarea {
   background: var(--bg-alt);
   transition: background 0.3s;
 }
-.projects__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
-  grid-gap: 4rem;
+.projects__carousel {
+  --cards: 3;
+  --gap: 4rem;
+  position: relative;
 }
-@media only screen and (max-width: 37.5em) {
-  .projects__grid {
-    grid-template-columns: 1fr;
-    grid-gap: 3rem;
+@media only screen and (max-width: 75em) {
+  .projects__carousel {
+    --cards: 2;
   }
 }
+@media only screen and (max-width: 56.25em) {
+  .projects__carousel {
+    --cards: 1;
+    --gap: 3rem;
+  }
+}
+.projects__track {
+  display: flex;
+  gap: var(--gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 1rem 0.5rem 2rem;
+  margin: -1rem -0.5rem -2rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.projects__track::-webkit-scrollbar {
+  display: none;
+}
+.projects__track:focus-visible {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: 4px;
+}
 .projects__card {
+  flex: 0 0 calc((100% - (var(--cards) - 1) * var(--gap)) / var(--cards));
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -632,6 +657,58 @@ textarea {
   margin-top: auto;
   padding: 1.2rem 3.5rem;
   font-size: 1.4rem;
+}
+.projects__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+.projects__nav-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.8rem;
+  height: 4.8rem;
+  padding: 0;
+  border: 1px solid var(--clr-border);
+  border-radius: 50%;
+  background: var(--bg-surface);
+  color: var(--clr-heading);
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, border-color 0.3s, opacity 0.3s;
+}
+.projects__nav-arrow svg {
+  width: 2rem;
+  height: 2rem;
+}
+.projects__nav-arrow:hover {
+  background: var(--clr-accent);
+  border-color: var(--clr-accent);
+  color: #fff;
+}
+.projects__dots {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.projects__dot {
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--clr-border);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+.projects__dot:hover {
+  background: var(--clr-accent);
+}
+.projects__dot--active {
+  background: var(--clr-accent);
+  transform: scale(1.4);
 }
 
 .contact {

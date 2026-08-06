@@ -278,7 +278,7 @@
 
         <!-- Project Carousel Container -->
         <div class="projects__carousel">
-          <div class="projects__grid">
+          <div class="projects__track" tabindex="0" role="group" aria-label="Projects carousel">
             <!-- Project 1: Accountrix -->
             <article class="projects__card">
               <div class="projects__card-img-cont">
@@ -333,56 +333,78 @@
               </div>
             </article>
 
-            <!-- Project 4 (NEW Placeholder) -->
+            <!-- Project 4: Bond-In -->
             <article class="projects__card">
               <div class="projects__card-img-cont">
+                <!-- TODO: swap for a real Bond-In screenshot at ./assets/png/bond-in.png -->
                 <img
-                  src="./assets/placeholder1.png" 
-                  alt="Placeholder Project 1"
+                  src="./assets/jpeg/project-mockup-example.jpeg"
+                  alt="Bond-In Screenshot"
                   class="projects__card-img"
                   loading="lazy"
                 />
               </div>
               <div class="projects__card-body">
-                <h3 class="projects__card-title">E-commerce Mockup</h3>
+                <h3 class="projects__card-title">Bond-In</h3>
                 <p class="projects__card-desc">
-                  A responsive, fully functional front-end mockup for an e-commerce platform using React and Tailwind CSS.
+                  A Roblox game that focuses on helping out students learn accounting.
                 </p>
               </div>
             </article>
 
-            <!-- Project 5 (NEW Placeholder) -->
+            <!-- Project 5: Discord Bot -->
             <article class="projects__card">
               <div class="projects__card-img-cont">
+                <!-- TODO: swap for a real screenshot at ./assets/png/discord-bot.png -->
                 <img
-                  src="./assets/placeholder2.png" 
-                  alt="Placeholder Project 2"
+                  src="./assets/jpeg/project-mockup-example.jpeg"
+                  alt="Discord Bot Screenshot"
                   class="projects__card-img"
                   loading="lazy"
                 />
               </div>
               <div class="projects__card-body">
-                <h3 class="projects__card-title">Data Visualization Dashboard</h3>
+                <h3 class="projects__card-title">Discord Bot</h3>
                 <p class="projects__card-desc">
-                  An interactive dashboard visualizing simulated traffic data using D3.js and modern CSS techniques.
+                  Made several utility Discord bots for multiple servers.
                 </p>
               </div>
             </article>
 
-            <!-- Project 6 (NEW Placeholder) -->
+            <!-- Project 6: Card of the Century -->
             <article class="projects__card">
               <div class="projects__card-img-cont">
+                <!-- TODO: swap for a real screenshot at ./assets/png/card-of-the-century.png -->
                 <img
-                  src="./assets/placeholder3.png" 
-                  alt="Placeholder Project 3"
+                  src="./assets/jpeg/project-mockup-example.jpeg"
+                  alt="Card of the Century Screenshot"
                   class="projects__card-img"
                   loading="lazy"
                 />
               </div>
               <div class="projects__card-body">
-                <h3 class="projects__card-title">Recipe Finder App</h3>
+                <h3 class="projects__card-title">Card of the Century</h3>
                 <p class="projects__card-desc">
-                  A full-stack concept project focusing on API integration for fetching and displaying complex recipe data.
+                  A Balatro inspired game made in Lua where cards battle other cards.
+                </p>
+              </div>
+            </article>
+
+            <!-- Project 7: Website Redesign -->
+            <article class="projects__card">
+              <div class="projects__card-img-cont">
+                <!-- TODO: swap for a real screenshot at ./assets/png/website-redesign.png -->
+                <img
+                  src="./assets/jpeg/project-mockup-example.jpeg"
+                  alt="Website Redesign Screenshot"
+                  class="projects__card-img"
+                  loading="lazy"
+                />
+              </div>
+              <div class="projects__card-body">
+                <h3 class="projects__card-title">Website Redesign</h3>
+                <p class="projects__card-desc">
+                  Redesigned a website from scratch using WordPress.
                 </p>
               </div>
             </article>
@@ -391,11 +413,40 @@
 
           <!-- Navigation Buttons -->
           <div class="projects__nav">
-            <button class="projects__nav-arrow projects__nav-arrow--left" aria-label="Previous Projects">
-              &lt;
+            <button
+              class="projects__nav-arrow projects__nav-arrow--left"
+              type="button"
+              aria-label="Previous project"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  d="M15 5 8 12l7 7"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </button>
-            <button class="projects__nav-arrow projects__nav-arrow--right" aria-label="Next Projects">
-              &gt;
+
+            <div class="projects__dots" role="tablist" aria-label="Select project"></div>
+
+            <button
+              class="projects__nav-arrow projects__nav-arrow--right"
+              type="button"
+              aria-label="Next project"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  d="m9 5 7 7-7 7"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </button>
           </div>
         </div>
